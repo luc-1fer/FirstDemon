@@ -1,0 +1,93 @@
+
+nav{
+    background-color: transparent;
+    margin: 5px;
+    border-radius: 3px;
+    padding: 10px 10px 10px;
+    display: flex;
+    font-family: Verdana;
+    letter-spacing: -1px;
+    color: white;
+    transition: all .195s ease-in-out;
+    cursor: pointer;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(40px);
+    box-shadow : 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 10px;
+    outline: none;
+    align-items: center;
+}
+
+nav:hover {
+    border: 2px solid #8b80f9;
+    box-shadow: #8b80f9 0px 0px 15px 1px inset,
+        #8b80f9 0px 0px 12px 1px;
+    border-radius: 3px;
+}
+
+nav input {
+    background-color: transparent;
+    border: 0px;
+    border-radius: 3px;
+    padding: 15px;
+    display: inline-block;
+    font-family: Verdana;
+    letter-spacing: -1px;
+    user-select: none;
+}
+
+.searchBarButton{
+    margin-left: 20px;
+    background-color: #8b80f9;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 10px 10px;
+    font-family: Verdana;
+    position: absolute;
+    right:    650px;
+    bottom:   25px;
+    
+}
+.divDetail{
+    display: inline-block;
+    justify-content: space-around;
+    margin: 12px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(21px);
+    box-shadow : 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    bottom: 45px;
+    left: 50px;
+    right: 50px;
+}
+
+.imgDetail {
+    display: inline-flex;
+    position: relative;
+    bottom: 50px;
+    left: 50px;
+    right: 50px;
+    top: 50px;
+}
+/* .navButton{
+    margin-left: 20px;
+    background-color: #8b80f9;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 10px 10px;
+    font-family: Verdana;
+    color: white;
+    position: relative;
+} */
