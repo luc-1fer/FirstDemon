@@ -34,7 +34,7 @@ function App() {
   const logout = ()=> setAccess (false);
   
   function onSearch(character) {
-    fetch(`https://rickandmortyapi.com/api/character/${character}`)
+    fetch(`http://localhost:3001/onSearch/${character}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.name) {
@@ -65,7 +65,7 @@ function App() {
 
       <Routes>
         <Route path='/favorites' element={<Favorites />} />
-        <Route exact path='/home' element={<Cards charact1ers={characters} onClose={onClose} />} />
+        <Route exact path='/home' element={<Cards characters={characters} onClose={onClose} />} />
         <Route exact path='/about' element={<About />} />
         <Route exact path='/' element={<Form login= {login}/>} />
         <Route exact path='/detail/:detailId' element={<Detail />} />
