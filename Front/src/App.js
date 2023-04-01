@@ -6,7 +6,7 @@ import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import About from './components/Routing/About.jsx'
 import Detail from './components/Routing/Detail.jsx'
 import Form from './components/Form/Form.jsx'
-import Favorites from './components/Favorites.jsx'
+import Favorites from './components/Fav/Favorites.jsx'
 
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
   const logout = ()=> setAccess (false);
   
   function onSearch(character) {
-    fetch(`http://localhost:3001/onSearch/${character}`)
+    fetch(`http://localhost:3001/rickandmorty/onSearch/${character}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.name) {
@@ -62,7 +62,6 @@ function App() {
     <div className='App' style={{ padding: '25px' }}>
       {location.pathname !== '/' 
       && <Nav onSearch={onSearch} random={random} logout={logout} />}
-
       <Routes>
         <Route path='/favorites' element={<Favorites />} />
         <Route exact path='/home' element={<Cards characters={characters} onClose={onClose} />} />

@@ -43,7 +43,7 @@ export default function Detail (){
       return (
         <div>
             <div className={styles.divDetail}>
-              <p className={styles.pDetail}>Name: {character.name}</p>
+              <p className={styles.divDetail}>Name: {character.name}</p>
               <p>Status: {character.status}</p>
               {character.specie && (  
               <p>Specie: {character.specie}</p>

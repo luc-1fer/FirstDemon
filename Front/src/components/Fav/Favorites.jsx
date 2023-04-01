@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { filterCards, orderCards } from "../redux/actions";
+import { filterCards, orderCards } from "../../redux/actions";
 
 const Favorites = ()=>{
     const {myFavorites} = useSelector((state) => state);

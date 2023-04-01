@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './Cards.module.css'
+import styles from '../Cards.module.css'
 
 export default function SearchBar(props) {
 

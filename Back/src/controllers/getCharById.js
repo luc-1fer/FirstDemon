@@ -1,24 +1,42 @@
 const axios = require('axios');
-const { response } = require('express');
 
 const URL = "https://rickandmortyapi.com/api/character/";
 
-const getCharById = (req, res)=>{
-    const params = req.params;
-    const id = params.id;
+const getCharById = async (req, res)=>{
+    const {id} = params.id;
 
-    axios
+    try{
+    const {data} = await axios.get(URL + id);
+    const character = {
+        id: data.id,
+        image: data.image,
+        name: data.name,
+        gender: data.gender,
+        species: data.species,
+        };
+        res.status(200).json(character)
+    } 
+    catch(error) {
+        res.status(500).json(error.message);
+        }
+    };
+    //Con Promesa
+  /* axios
     .get(URL + id)
-    .then((response) => {
-        const {id, image, species, gender} = response.data;
-        res.status(200).json({id, image, species, gender})
+    .then((response) => response.data)
+    .then(
+      (data) => {
+        const character = {
+          id: data.id,
+          image: data.image,
+          name: data.name,
+          gender: data.gender,
+          species: data.species,
+        };
+        res.status(200).json(character);
+      },
+      (error) => res.status(500).json(error.message)
+    ); */
 
-    })
-    .catch((error) => {
-        res.status(500).json({message : error.message})
-        
-    })
-};
-
-module.exports = getCharById;
+module.exports = {getCharById};
 

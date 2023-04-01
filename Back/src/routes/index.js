@@ -2,10 +2,23 @@ const { Router } = require('express');
 const router = Router();
 const { getCharDetail } = require('../controllers/getCharDetail');
 const { getCharById } = require('../controllers/getCharById');
-const { getFav, addFav, delFav } = require('../controllers/favControllers');
+const {postFav} = require('../controllers/postFav')
+const {getFav} = require('../controllers/getFav')
+const {deleteFav} = require('../controllers/deleteFav')
+const {login} = require('../controllers/login')
+const {postUser} = require('../controllers/postUser')
+// const { getFav, addFav, delFav } = require('../controllers/favControllers');
 
 router.get('/detail/:id', getCharDetail);
 router.get('/onSearch/:id', getCharById);
+
+router.post('/favs', postFav);
+router.get('/favs', getFav);
+router.delete('/favs/:id', deleteFav);
+
+router.get('/login', login);
+router.post('/login', postUser);
+
 
 // router.get('/detail/:id', function(req, res, next) {
 //     getCharDetail(req, res, );
@@ -20,8 +33,5 @@ router.get('/onSearch/:id', getCharById);
 // });
 
 
-router.post('/fav', addFav);
-router.get('/fav', getFav);
-router.delete('/fav/:id', delFav);
 
 module.exports = router;

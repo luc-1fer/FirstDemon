@@ -1,6 +1,6 @@
 import React from 'react'
-import SearchBar from '../SearchBar.jsx'
-import styles from '../Cards.module.css'
+import SearchBar from '../Search Bar/SearchBar.jsx'
+import styles from './Nav.module.css'
 import { Link } from 'react-router-dom'
 
 

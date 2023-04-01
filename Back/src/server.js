@@ -3,6 +3,7 @@ const server = express();
 const PORT = 3001;
 const router = require('./routes/index')
 const json = require('express').json;
+const {conn} = require('./DB_connection')
 
 const cors = require("cors");
 
@@ -17,7 +18,10 @@ server.use(cors(corsOptions));
 server.use('/', router)
 server.use(json())
 
-server.listen(PORT, () => {
+conn.sync({force: true}).then(()=>{
+    server.listen(PORT, (req, res) => {
     console.log('Server raised in port ' + PORT);
+})
+
 });
 

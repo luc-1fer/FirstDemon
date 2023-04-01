@@ -1,5 +1,5 @@
 
-export const ADD_CHARACTER ='ADD_PRODUCT'
+export const ADD_CHARACTER ='ADD_CHARACTER'
 export const DELETE_CHARACTER ='DELETE_CHARACTER'
 export const FILTER= 'FILTER'
 export const ORDER= 'ORDER'
@@ -16,7 +16,7 @@ export const ORDER= 'ORDER'
 export const addCharacter = (character)=>{
     return async function(dispatch){
         try {
-            await fetch('http://localhost:3001/fav', {
+            await fetch('http://localhost:3001/rickandmorty/favs', {
                 method: 'POST',
                 body: JSON.stringify(character),
                 headers: {'Content-type':'application/json; charset= UTF-8,'}
@@ -35,7 +35,7 @@ export const addCharacter = (character)=>{
 export const deleteCharacter = (id) =>{
     return async function(dispatch){
         try {
-            await fetch(`http://localhost:3001/fav/${id}`, {
+            await fetch(`http://localhost:3001/rickandmorty/favs/${id}`, {
                 method: 'DELETE',
             })
             .then(response => response.json())
